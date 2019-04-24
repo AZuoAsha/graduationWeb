@@ -1,0 +1,9 @@
+/applicationContext.xml
+/db.properties
+/jedisPool.properties
+/log4j.properties
+/mappers/
+/mvc.xml
+/mybatis.cfg.xml
+/redis-config.xml
+/web/
