@@ -11,11 +11,8 @@
 	</select>
 	<update id="update" parameterType="User">
 		update user set password=#{password},passwordcfg=#{passwordcfg} where phone=#{phone}
-	</update>
+	</update>-->
 	<select id="findAll" resultType="User">
 		select * from user
-	</select>
-	<select id="config" parameterType="User" resultType="User">
-		select * from user where email=#{email} and phone=#{phone}
-	</select> -->
+	</select> 
 </mapper>

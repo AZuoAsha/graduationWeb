@@ -6,6 +6,7 @@ import web.redis.RedisClient;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -44,4 +45,11 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
     public void find(String name) {
 
     }
+
+	@Override
+	public List<User> findAll() {
+		String statement = "mappers.UserMapper.findAll";
+		List<User> list=getSqlSession().selectList(statement);
+		return list;
+	}
 }
