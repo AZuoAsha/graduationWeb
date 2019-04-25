@@ -30,7 +30,7 @@ public class UserController {
         response.setContentType("text/html;charset=utf-8"); 
         System.out.println(user.getTime()+":"+user.getUserName());
         userDao.add(user);
-        response.getWriter().write("Register Success "); 
+        response.getWriter().write("Web Server Say:Register Success "); 
     }
 
     @RequestMapping(value="/findAll.do",method=RequestMethod.POST)
