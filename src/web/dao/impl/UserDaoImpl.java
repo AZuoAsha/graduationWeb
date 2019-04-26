@@ -47,9 +47,9 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
     }
 
 	@Override
-	public List<User> findAll() {
+	public List<User> findAll(String userName) {
 		String statement = "mappers.UserMapper.findAll";
-		List<User> list=getSqlSession().selectList(statement);
+		List<User> list=getSqlSession().selectList(statement, userName);
 		return list;
 	}
 }

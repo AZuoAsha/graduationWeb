@@ -30,14 +30,14 @@ public class UserController {
         response.setContentType("text/html;charset=utf-8"); 
         System.out.println(user.getTime()+":"+user.getUserName());
         userDao.add(user);
-        response.getWriter().write("Web Server Say:Register Success "); 
+        response.getWriter().write("Web Server Say: User "+user.getUserName()+" Register Success "); 
     }
 
     @RequestMapping(value="/findAll.do",method=RequestMethod.POST)
-    public void findAll(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    public void findAll(User u,HttpServletRequest request, HttpServletResponse response) throws IOException{
     	request.setCharacterEncoding("utf-8");  
         response.setContentType("text/html;charset=utf-8");
-        List<User> list=userDao.findAll();
+        List<User> list=userDao.findAll(u.getUserName());
         JSONArray json=new JSONArray();
         for(User user : list){
             JSONObject jo = new JSONObject();
