@@ -43,6 +43,7 @@ public class UserController {
             JSONObject jo = new JSONObject();
             jo.put("time", user.getTime());
             jo.put("userName", user.getUserName());
+            jo.put("id", user.getId());
             json.add(jo);
         }
         System.out.println("json="+json);
